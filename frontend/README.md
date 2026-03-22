@@ -1,70 +1,232 @@
-# Getting Started with Create React App
+# 🎨 Salon Booking Frontend (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive **frontend application** for a salon booking platform built with **React, Redux, and Tailwind CSS**.
 
-## Available Scripts
+This app allows customers, salon owners, and admins to interact with the system through an intuitive UI with real-time updates and seamless booking experience.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+# 🚀 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ⚛️ React.js
+- 🗂 Redux (State Management)
+- 🎨 Tailwind CSS
+- 🔗 Axios (API Communication)
+- 🔔 WebSocket (Real-time Notifications)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+# 📁 Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Based on the current project structure:
 
-### `npm run build`
+```bash
+src/
+├── Admin/                # Admin dashboard & management
+├── Auth/                 # Authentication (Login, Register, Reset)
+├── Customer/             # Customer-facing UI
+├── Redux/                # Global state management
+├── routes/               # Route configurations
+├── salon/                # Salon owner dashboard
+├── util/                 # Utility functions
+├── config/               # API configuration
+└── App.js                # Root component
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 👤 User Roles & Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 👥 Customer
 
-### `npm run eject`
+- Browse salons
+- View services and details
+- Book appointments
+- Make payments
+- Receive notifications
+- Write reviews
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🏢 Salon Owner
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Manage salon profile
+- Add/update services
+- View bookings
+- Track earnings
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠 Admin
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Dashboard overview
+- Manage salons
+- Monitor activity
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# 🔐 Authentication
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Login & Registration system
+- Password reset flow
+- Role-based access routing
+- Integrated with backend authentication (Keycloak)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# 🔄 State Management (Redux)
 
-### Analyzing the Bundle Size
+Organized into modules:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Auth
+- Booking
+- Category
+- Salon
+- Payment
+- Notifications
+- Reviews
 
-### Making a Progressive Web App
+Each module contains:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- actions
+- reducers
+- actionTypes
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# 🌐 Routing
 
-### Deployment
+Custom route handling for:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Admin routes
+- Customer routes
+- Salon routes
 
-### `npm run build` fails to minify
+Ensures:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Protected routes
+- Role-based navigation
+
+---
+
+# 📡 API Integration
+
+Configured in:
+
+```bash
+src/config/api.js
+```
+
+- Centralized API calls
+- Backend communication via Axios
+
+---
+
+# 🔔 Real-Time Notifications
+
+- Implemented using WebSocket
+- Custom hook:
+
+```bash
+useNotificationWebsocket.jsx
+```
+
+- Enables live updates for bookings and events
+
+---
+
+# 💳 Payment Integration
+
+- Handles payment success flow
+- Integrated with backend payment services
+- UI handler:
+
+```bash
+PaymentSuccessHandler.jsx
+```
+
+---
+
+# 🎨 UI & Design
+
+- Tailwind CSS for styling
+- Responsive design
+- Reusable components
+- Clean and modern UI
+
+---
+
+# ⚙️ Setup Instructions
+
+## 1️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+---
+
+## 2️⃣ Run the application
+
+```bash
+npm start
+```
+
+App runs at:
+
+```bash
+http://localhost:3000
+```
+
+---
+
+# 🔧 Environment Configuration
+
+Create `.env` file in frontend root:
+
+```env
+REACT_APP_API_URL=http://localhost:8080
+```
+
+---
+
+# 🧪 Testing
+
+```bash
+npm test
+```
+
+---
+
+# 🚀 Future Improvements
+
+- Dark mode support
+- Performance optimization
+- PWA support
+- Better UI animations
+- Advanced filtering & search
+
+---
+
+# 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+# 📄 License
+
+MIT License
+
+---
+
+# 🙌 Acknowledgements
+
+- React
+- Redux
+- Tailwind CSS
+
+---
+
+# 📬 Contact
+
+Feel free to connect for collaboration or feedback.
